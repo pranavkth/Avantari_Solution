@@ -1,46 +1,124 @@
 //
 //  AppDelegate.swift
-//  Avantari_Solution
+//  Avantari_Assignment
 //
-//  Created by pranav gupta on 08/05/17.
+//  Created by pranav gupta on 05/05/17.
 //  Copyright © 2017 Pranav gupta. All rights reserved.
 //
 
 import UIKit
+import UserNotifications
+import SocketIO
+import Charts
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate{
+    
     var window: UIWindow?
-
-
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([UNNotificationPresentationOptions.alert, UNNotificationPresentationOptions.sound])
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Authorisation Request To Enable Notifications.
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {
+            (accepted,error) in
+            if !accepted {
+                print("notification access denied")
+            }
+            
+        }
+        
+        // Fetching the Persistent Data From UserDefaults.
+        
+        if defaults.dictionaryRepresentation().index(forKey: "persistentCollectiondata") != nil {
+            
+            guard let info = defaults.object(forKey: "persistentCollectiondata") as? NSData else{print("error in getting info"); return true}
+            guard let persistentData = NSKeyedUnarchiver.unarchiveObject(with: info as Data) as? [ServerData] else {print("error in getting persistent data"); return true}
+            print("persistentdatacount", persistentData.count)
+            persistentDataGlobal = persistentData
+            
+        }
+            
+        else{
+            
+            let info = NSKeyedArchiver.archivedData(withRootObject: persistentDataGlobal)
+            defaults.set(info, forKey: "persistentCollectiondata")
+        }
+        
+        
         return true
     }
-
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // Closing the Connection when the app enters background and saving data to userdefaults.
+        
+        socket.disconnect()
+        let info = NSKeyedArchiver.archivedData(withRootObject: persistentDataGlobal)
+        defaults.set(info, forKey: "persistentCollectiondata")
+        defaults.synchronize()
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Establishing the connection with the server once the app becomes Active.
+        
+        socket.connect()
+        
+        
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        let info = NSKeyedArchiver.archivedData(withRootObject: persistentDataGlobal)
+        defaults.set(info, forKey: "persistentCollectiondata")
+        defaults.synchronize()
+        
     }
-
-
+    
+    // Function for Scheduling Notification.
+    
+    func scheduleNotification(at date: Date){
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second! + 2)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+        let content = UNMutableNotificationContent()
+        content.title = "Number Repeated"
+        content.body = String(persistentDataGlobal[persistentDataGlobal.count - 1].number) + "  " +  " Number Repeated"
+        content.sound = UNNotificationSound(named: "alert.caf")
+        let request = UNNotificationRequest(identifier: "repeatednumber", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().add(request){
+            error in
+            if let error = error {
+                print ("error in notification",error)
+            }
+        }
+        
+    }
+    
 }
+
+let delegate = UIApplication.shared.delegate as? AppDelegate
+
+
 

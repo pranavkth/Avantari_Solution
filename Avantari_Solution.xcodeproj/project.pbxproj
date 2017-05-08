@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		167F894DBB66F615417A5BB3 /* Pods_Avantari_Solution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DEACA86113F6B708258824 /* Pods_Avantari_Solution.framework */; };
 		CD07EA1C1EC050BF00DC11FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD07EA1B1EC050BF00DC11FF /* AppDelegate.swift */; };
-		CD07EA1E1EC050BF00DC11FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD07EA1D1EC050BF00DC11FF /* ViewController.swift */; };
+		CD07EA1E1EC050BF00DC11FF /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD07EA1D1EC050BF00DC11FF /* ChartViewController.swift */; };
 		CD07EA211EC050BF00DC11FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD07EA1F1EC050BF00DC11FF /* Main.storyboard */; };
 		CD07EA231EC050BF00DC11FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD07EA221EC050BF00DC11FF /* Assets.xcassets */; };
 		CD07EA261EC050BF00DC11FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD07EA241EC050BF00DC11FF /* LaunchScreen.storyboard */; };
+		CD07EA2E1EC0520C00DC11FF /* ServerGeneratedDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD07EA2D1EC0520C00DC11FF /* ServerGeneratedDataStructure.swift */; };
+		CD07EA301EC0524200DC11FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD07EA2F1EC0524200DC11FF /* Constants.swift */; };
+		CD07EA321EC056A700DC11FF /* alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = CD07EA311EC053E200DC11FF /* alert.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62F55230DD4AA2F4E8237841 /* Pods-Avantari_Solution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avantari_Solution.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avantari_Solution/Pods-Avantari_Solution.release.xcconfig"; sourceTree = "<group>"; };
+		95DEACA86113F6B708258824 /* Pods_Avantari_Solution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avantari_Solution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD07EA181EC050BF00DC11FF /* Avantari_Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avantari_Solution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD07EA1B1EC050BF00DC11FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD07EA1D1EC050BF00DC11FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD07EA1D1EC050BF00DC11FF /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		CD07EA201EC050BF00DC11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD07EA221EC050BF00DC11FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD07EA251EC050BF00DC11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD07EA271EC050BF00DC11FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD07EA2D1EC0520C00DC11FF /* ServerGeneratedDataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerGeneratedDataStructure.swift; sourceTree = "<group>"; };
+		CD07EA2F1EC0524200DC11FF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CD07EA311EC053E200DC11FF /* alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alert.caf; sourceTree = "<group>"; };
+		DD2E60A313811E0C1A81CDF9 /* Pods-Avantari_Solution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avantari_Solution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avantari_Solution/Pods-Avantari_Solution.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167F894DBB66F615417A5BB3 /* Pods_Avantari_Solution.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0DF7FC0449D67B90F85A83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95DEACA86113F6B708258824 /* Pods_Avantari_Solution.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD07EA0F1EC050BF00DC11FF = {
 			isa = PBXGroup;
 			children = (
 				CD07EA1A1EC050BF00DC11FF /* Avantari_Solution */,
 				CD07EA191EC050BF00DC11FF /* Products */,
+				E5845CC20FD815A130D4A2F5 /* Pods */,
+				9A0DF7FC0449D67B90F85A83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +76,25 @@
 			isa = PBXGroup;
 			children = (
 				CD07EA1B1EC050BF00DC11FF /* AppDelegate.swift */,
-				CD07EA1D1EC050BF00DC11FF /* ViewController.swift */,
+				CD07EA1D1EC050BF00DC11FF /* ChartViewController.swift */,
 				CD07EA1F1EC050BF00DC11FF /* Main.storyboard */,
 				CD07EA221EC050BF00DC11FF /* Assets.xcassets */,
 				CD07EA241EC050BF00DC11FF /* LaunchScreen.storyboard */,
 				CD07EA271EC050BF00DC11FF /* Info.plist */,
+				CD07EA2D1EC0520C00DC11FF /* ServerGeneratedDataStructure.swift */,
+				CD07EA2F1EC0524200DC11FF /* Constants.swift */,
+				CD07EA311EC053E200DC11FF /* alert.caf */,
 			);
 			path = Avantari_Solution;
+			sourceTree = "<group>";
+		};
+		E5845CC20FD815A130D4A2F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD2E60A313811E0C1A81CDF9 /* Pods-Avantari_Solution.debug.xcconfig */,
+				62F55230DD4AA2F4E8237841 /* Pods-Avantari_Solution.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD07EA2A1EC050BF00DC11FF /* Build configuration list for PBXNativeTarget "Avantari_Solution" */;
 			buildPhases = (
+				14AAFC282417491AA74C2FB6 /* [CP] Check Pods Manifest.lock */,
 				CD07EA141EC050BF00DC11FF /* Sources */,
 				CD07EA151EC050BF00DC11FF /* Frameworks */,
 				CD07EA161EC050BF00DC11FF /* Resources */,
+				2E3F025F33C29950933F39AE /* [CP] Embed Pods Frameworks */,
+				BE51B1D2C780EC93C650B709 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD07EA321EC056A700DC11FF /* alert.caf in Resources */,
 				CD07EA261EC050BF00DC11FF /* LaunchScreen.storyboard in Resources */,
 				CD07EA231EC050BF00DC11FF /* Assets.xcassets in Resources */,
 				CD07EA211EC050BF00DC11FF /* Main.storyboard in Resources */,
@@ -132,13 +169,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14AAFC282417491AA74C2FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2E3F025F33C29950933F39AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avantari_Solution/Pods-Avantari_Solution-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE51B1D2C780EC93C650B709 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avantari_Solution/Pods-Avantari_Solution-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD07EA141EC050BF00DC11FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD07EA1E1EC050BF00DC11FF /* ViewController.swift in Sources */,
+				CD07EA1E1EC050BF00DC11FF /* ChartViewController.swift in Sources */,
+				CD07EA2E1EC0520C00DC11FF /* ServerGeneratedDataStructure.swift in Sources */,
 				CD07EA1C1EC050BF00DC11FF /* AppDelegate.swift in Sources */,
+				CD07EA301EC0524200DC11FF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +346,9 @@
 		};
 		CD07EA2B1EC050BF00DC11FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2E60A313811E0C1A81CDF9 /* Pods-Avantari_Solution.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CA27EBDQ94;
 				INFOPLIST_FILE = Avantari_Solution/Info.plist;
@@ -272,7 +361,9 @@
 		};
 		CD07EA2C1EC050BF00DC11FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62F55230DD4AA2F4E8237841 /* Pods-Avantari_Solution.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CA27EBDQ94;
 				INFOPLIST_FILE = Avantari_Solution/Info.plist;
@@ -302,6 +393,7 @@
 				CD07EA2C1EC050BF00DC11FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

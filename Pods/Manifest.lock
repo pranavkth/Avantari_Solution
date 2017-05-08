@@ -1,0 +1,17 @@
+PODS:
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
+  - Socket.IO-Client-Swift (8.3.3)
+
+DEPENDENCIES:
+  - Charts
+  - Socket.IO-Client-Swift (~> 8.3.3)
+
+SPEC CHECKSUMS:
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Socket.IO-Client-Swift: a2faffdbde89c63aebc5d631041530c1068b02b8
+
+PODFILE CHECKSUM: 769e1a6d38c674b07d176e62c9e637e893abf093
+
+COCOAPODS: 1.1.1
